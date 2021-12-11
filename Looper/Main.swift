@@ -1,37 +1,54 @@
 //
-//  ViewController.swift
+//  Main.swift
 //  Looper
 //
-//  Created by Julian Silvestri on 2021-10-19.
+//  Created by Julian Silvestri on 2021-12-11.
 //
 
 import UIKit
 import AVFoundation
 
-class DynamicLooperCell: UICollectionViewCell{
-    @IBOutlet weak var recordBtn: UIButton!
-    @IBOutlet weak var stopBtn: UIButton!
-    @IBOutlet weak var restartBtn: UIButton!
-}
-
-class Main: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,AVAudioRecorderDelegate,UICollectionViewDelegateFlowLayout{
+class Main: UIViewController, AVAudioRecorderDelegate {
     
-    @IBOutlet weak var looperCollectionView: UICollectionView!
+
+    @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var logo: UIImageView!
     
-    var recordButton: UIButton!
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.recordingSession = AVAudioSession.sharedInstance()
         openingLogoAnimation()
-        recordingSession = AVAudioSession.sharedInstance()
+        setupDisplay()
+        // Do any additional setup after loading the view.
+    }
 
+    
+    
+    //MARK: Opening Logo Animation
+    func openingLogoAnimation(){
+        UIView.animate(withDuration: 1, animations: {
+            self.logo.frame = CGRect(x: 16, y: 25, width: 79, height: 82)
+        }, completion: {_ in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.recordBtn.alpha = 1
+            })
+        })
+    }
+    
+    func setupDisplay(){
+        self.stopBtn.alpha = 0
+        self.recordBtn.alpha = 0
+    }
+    
+    func setupRecorder(){
         do {
-            try recordingSession.setCategory(.playAndRecord, mode: .default)
-            try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { allowed in
+            try self.recordingSession.setCategory(.playAndRecord, mode: .default)
+            try self.recordingSession.setActive(true)
+            self.recordingSession.requestRecordPermission() { allowed in
                 DispatchQueue.main.async {
                     if allowed {
                         print("success recording")
@@ -43,35 +60,35 @@ class Main: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
         } catch {
             print("failure getting permission")
         }
-        self.looperCollectionView.dataSource = self
-        self.looperCollectionView.delegate = self
     }
     
-    //MARK: Opening Logo Animation
-    func openingLogoAnimation(){
-        UIView.animate(withDuration: 1, animations: {
-            self.logo.frame = CGRect(x: 16, y: 20, width: 79, height: 82)
+    //MARK: Record Btn Tapped
+    func recordBtnTapped() {
+        if audioRecorder == nil {
+            startRecording()
+        } else {
+            finishRecording(success: true)
+        }
+    }
+    
+    
+    //MARK: Finish Recording
+    func finishRecording(success: Bool) {
+        audioRecorder.stop()
+        audioRecorder = nil
 
-        })
-    }
-    
-    //MARK: Number of rows in section
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    //MARK: Cell For Row At
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.looperCollectionView.dequeueReusableCell(withReuseIdentifier: "looperCell", for: indexPath) as! DynamicLooperCell
-        
-        cell.recordBtn.setTitle("Record", for: .normal)
-        cell.recordBtn.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-        
-        return cell
+        if success {
+            //recordButton.setTitle("Tap to Re-record", for: .normal)
+        } else {
+            //recordButton.setTitle("Tap to Record", for: .normal)
+            // recording failed :(
+        }
     }
     
     //MARK: Start Recording
     func startRecording() {
+        print("starting to record")
+        //self.view.isUserInteractionEnabled = false
         let audioFilename = getDocumentsDirectory().appendingPathComponent("recording001.m4a")
 
         let settings = [
@@ -96,33 +113,8 @@ class Main: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
         return paths[0]
     }
     
-    //MARK: Finish Recording
-    func finishRecording(success: Bool) {
-        audioRecorder.stop()
-        audioRecorder = nil
-
-        if success {
-            recordButton.setTitle("Tap to Re-record", for: .normal)
-        } else {
-            recordButton.setTitle("Tap to Record", for: .normal)
-            // recording failed :(
-        }
-    }
-    
-    //MARK: Record Btn Tapped
-    @objc func recordTapped() {
-        if audioRecorder == nil {
-            startRecording()
-        } else {
-            finishRecording(success: true)
-        }
-    }
-    
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-            finishRecording(success: false)
-        }
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder) {
     }
 
+    
 }
-
