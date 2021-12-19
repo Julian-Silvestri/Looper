@@ -23,21 +23,21 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.46521786970000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ydl-Ax-7d3">
-                                    <size key="itemSize" width="307" height="315"/>
+                                    <size key="itemSize" width="307" height="173"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="looperCell" id="pEK-sM-Duk" customClass="LooperCell" customModule="Looper" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="0.0" width="307" height="315"/>
+                                        <rect key="frame" x="7" y="0.0" width="307" height="173"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CE8-Sh-SEb">
-                                            <rect key="frame" x="0.0" y="0.0" width="307" height="315"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="307" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xac-zf-fJL">
-                                                    <rect key="frame" x="58" y="8" width="191" height="120"/>
+                                                    <rect key="frame" x="58" y="8" width="191" height="54"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -46,7 +46,7 @@
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.96563438950000002" green="1" blue="0.20814316629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <size key="customSize" width="307" height="315"/>
+                                        <size key="customSize" width="307" height="173"/>
                                         <connections>
                                             <outlet property="titleOfTrackLabel" destination="xac-zf-fJL" id="Q9l-XA-Wdd"/>
                                         </connections>
@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h1-50-QNW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-427.5" y="718.75"/>
+            <point key="canvasLocation" x="-473" y="818"/>
         </scene>
         <!--Create-->
         <scene sceneID="yPq-bP-EFT">
@@ -81,33 +81,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="looperLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KXl-eS-DzX">
-                                <rect key="frame" x="19" y="68" width="283" height="344"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="looperLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YJT-h9-RJF">
+                                <rect key="frame" x="16" y="30" width="288" height="401"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7P-hp-yH2">
-                                <rect key="frame" x="97" y="191" width="127" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.13725490200000001" green="0.29803921570000003" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Record"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4O-JP-jqq">
-                                <rect key="frame" x="97" y="191" width="127" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="177" y="332" width="127" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85718193890000005" green="0.27896570790000003" blue="0.27218018290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Stop"/>
+                                <connections>
+                                    <action selector="stopRecording:" destination="vaO-Wd-Mzr" eventType="touchUpInside" id="V2q-ab-C6f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7P-hp-yH2" customClass="RecordingButtons" customModule="Looper" customModuleProvider="target">
+                                <rect key="frame" x="9" y="332" width="127" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.46472269300000002" green="0.75726479290000004" blue="0.7956765294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Record">
+                                    <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startRecording:" destination="vaO-Wd-Mzr" eventType="touchUpInside" id="Yhv-wp-dqZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwj-m9-OfM">
+                                <rect key="frame" x="36" y="69" width="249" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTo-lu-JIx">
+                                <rect key="frame" x="77" y="141" width="166" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.71970230339999997" green="0.7726127505" blue="0.78421205279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Play audio"/>
+                                <connections>
+                                    <action selector="playAudioWithSender:" destination="vaO-Wd-Mzr" eventType="touchUpInside" id="0X7-UI-jNt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dUt-l1-swR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Iwj-m9-OfM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create" id="xcd-zC-eLw"/>
                     <navigationItem key="navigationItem" id="hmF-9V-P6P"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="logo" destination="KXl-eS-DzX" id="S4g-HC-aPE"/>
+                        <outlet property="looperLogo" destination="YJT-h9-RJF" id="2us-5H-djO"/>
                         <outlet property="recordBtn" destination="l7P-hp-yH2" id="2gl-L3-Pes"/>
                         <outlet property="stopBtn" destination="B4O-JP-jqq" id="icK-bC-zEs"/>
                     </connections>

@@ -17,6 +17,7 @@
 		08B22A88271FA0CA000220E0 /* LooperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B22A87271FA0CA000220E0 /* LooperUITests.swift */; };
 		08B22A8A271FA0CA000220E0 /* LooperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B22A89271FA0CA000220E0 /* LooperUITestsLaunchTests.swift */; };
 		08BE21B8276563EB001956CD /* MyRecordings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE21B7276563EB001956CD /* MyRecordings.swift */; };
+		08BE21C0276869C9001956CD /* RecordingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE21BF276869C9001956CD /* RecordingButtons.swift */; };
 		08CAA8E52765552C005A3BFB /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CAA8E42765552C005A3BFB /* Main.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		08B22A87271FA0CA000220E0 /* LooperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooperUITests.swift; sourceTree = "<group>"; };
 		08B22A89271FA0CA000220E0 /* LooperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooperUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		08BE21B7276563EB001956CD /* MyRecordings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecordings.swift; sourceTree = "<group>"; };
+		08BE21BF276869C9001956CD /* RecordingButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingButtons.swift; sourceTree = "<group>"; };
 		08CAA8E42765552C005A3BFB /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,10 +105,11 @@
 		08B22A62271FA0C9000220E0 /* Looper */ = {
 			isa = PBXGroup;
 			children = (
+				08BE21BA27686814001956CD /* Models */,
+				08BE21C3276F9253001956CD /* Views */,
+				08BE21B92768679B001956CD /* Controllers */,
 				08B22A96271FA0E3000220E0 /* Storyboards */,
 				08B22A63271FA0C9000220E0 /* AppDelegate.swift */,
-				08CAA8E42765552C005A3BFB /* Main.swift */,
-				08BE21B7276563EB001956CD /* MyRecordings.swift */,
 				08B22A65271FA0C9000220E0 /* SceneDelegate.swift */,
 				08B22A6F271FA0CA000220E0 /* Assets.xcassets */,
 				08B22A74271FA0CA000220E0 /* Info.plist */,
@@ -139,6 +142,30 @@
 				08B22A69271FA0C9000220E0 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		08BE21B92768679B001956CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				08BE21B7276563EB001956CD /* MyRecordings.swift */,
+				08CAA8E42765552C005A3BFB /* Main.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		08BE21BA27686814001956CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		08BE21C3276F9253001956CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08BE21BF276869C9001956CD /* RecordingButtons.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +302,7 @@
 				08CAA8E52765552C005A3BFB /* Main.swift in Sources */,
 				08B22A6E271FA0C9000220E0 /* Looper.xcdatamodeld in Sources */,
 				08B22A64271FA0C9000220E0 /* AppDelegate.swift in Sources */,
+				08BE21C0276869C9001956CD /* RecordingButtons.swift in Sources */,
 				08BE21B8276563EB001956CD /* MyRecordings.swift in Sources */,
 				08B22A66271FA0C9000220E0 /* SceneDelegate.swift in Sources */,
 			);

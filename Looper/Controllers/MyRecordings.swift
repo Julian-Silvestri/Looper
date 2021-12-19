@@ -25,20 +25,10 @@ class MyRecordings: UIViewController, UICollectionViewDelegate, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        
         looperCollectionView.delegate = self
         looperCollectionView.dataSource = self
-        // Do any additional setup after loading the view.
-        
-//        let itemSize = UIScreen.main.bounds.width/2 - 3
-//
-//        let layout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        layout.itemSize = CGSize(width: itemSize, height: itemSize)
-//
-//        layout.minimumInteritemSpacing = 3
-//        layout.minimumLineSpacing = 3
-//
-//        looperCollectionView.collectionViewLayout = layout
+
     }
     
     
@@ -46,8 +36,6 @@ class MyRecordings: UIViewController, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
-    
-    
     
     
     //MARK: Cell For Row At
@@ -117,5 +105,11 @@ class MyRecordings: UIViewController, UICollectionViewDelegate, UICollectionView
 
     }
     
+    
+    func openingAnimation(){
+        UIView.animate(withDuration: 0.5, animations: {
+            //self
+        })
+    }
 
 }
